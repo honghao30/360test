@@ -1,0 +1,96 @@
+.vr-360 {
+  overflow: hidden;
+  position: relative;
+  max-width: 960px;
+  margin: 0 auto;
+  .vr-360__default {
+    img {
+      max-width: 100%;
+    }
+    .vr-img__list {
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      &.vr-img__first,
+      &.vr-img__second {
+        opacity: 0;
+      }
+    }
+  }
+  &.loadImg {
+    .vr-360__default {
+      position: absolute;
+      top: 0;
+      left: 0;
+      right: 0;
+      bottom: 0;
+      width: 100%;
+    }
+  }
+  &.is {
+    cursor: pointer;
+    .vr-360__default > img,
+    .vr-360__default {
+      pointer-events: none;
+    }
+    .vr-360__default > img,
+    .vr-360__btn {
+      display: none;
+    }
+  }
+  button {
+    display: block;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 66px;
+    height: 67px;
+    border: none;
+    background-color: transparent;
+    background-repeat: no-repeat;
+    background-image: url(https://www.kia.com/content/dam/kwcms/kr/ko/images/vehicles/img_pip_360Refresh.png);
+    cursor: pointer;
+  }
+  .loading {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: 100;
+    &::after {
+      display: block;
+      color: #fff;
+      content: '로딩 중';
+    }
+  }
+}
+.vr-list__color {
+  display: flex;
+  justify-content: center;
+  li {
+    & + li {
+      margin-left: 10px;
+    }
+    button {
+      padding: 10px 15px;
+      font-size: 15px;
+      &.on {
+        background-color: #ff0000;
+        color: #fff;
+      }
+    }
+  }
+}
+.test {
+  position: absolute;
+  z-index: 1000;
+  top: 10px;
+  left: 10px;
+}

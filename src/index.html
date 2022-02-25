@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/reset-css@5.0.1/reset.min.css">
+  <link rel="stylesheet" href="./css/vr.css">
+</head>
+
+<body>
+  <!-- vr- 시작 클래스는 필수 -->
+  <div class="vr-area type-1">
+    <div class="vr-360">
+      <div class="vr-360__default"><img
+          src="https://www.kia.com/content/dam/kwcms/kr/ko/images/360vr/exterior/EDE-DEA/SWP/SWP_1.png"></div>
+      <p class="vr-360__btn"><button></button></p>
+    </div>
+    <ul class="vr-list__color">
+      <li><button type="button" data-color="SWP" class="on">스노우 화이트 펄</button></li>
+      <li><button type="button" data-color="ABP">오로라 블랙 펄</button></li>
+      <li><button type="button" data-color="B4U">그래비티 블루</button></li>
+      <li><button type="button" data-color="AGT">인터스텔라 그레이</button></li>
+      <li><button type="button" data-color="KLG">스틸 그레이</button></li>
+    </ul>
+  </div>
+  <div class="vr-area type-2">
+    <div class=" vr-360">
+      <div class="vr-360__default"><img src="./images/SWP/SWP_1.png"></div>
+      <p class="vr-360__btn"><button></button></p>
+    </div>
+    <ul class="vr-list__color">
+      <li><button type="button" data-color="SWP" class="on">스노우 화이트 펄</button></li>
+      <li><button type="button" data-color="ABP">오로라 블랙 펄</button></li>
+      <li><button type="button" data-color="B4U">그래비티 블루</button></li>
+      <li><button type="button" data-color="AGT">인터스텔라 그레이</button></li>
+      <li><button type="button" data-color="KLG">스틸 그레이</button></li>
+    </ul>
+  </div>
+</body>
+<script src="./js/vr.js"></script>
+<script>
+  const vr360 = new Vr360();
+  const vr3601 = new Vr360(
+    {
+      vrBase: '.vr-area.type-2', //감싸는 div
+      url: './images', // 이미지 폴더
+      //folder: './images', // 설정하지 않으면 색상값을 폴더로 사용
+      //fileExp: 'png', // 확장자, 기본은 png
+      reverse: true, // 360 방향 역순
+      amount: 30, // 총 이미지 갯수, 기본 36
+    }
+  );
+</script>
+
+</html>
